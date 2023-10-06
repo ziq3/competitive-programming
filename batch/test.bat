@@ -5,3 +5,4 @@ for /l %%i in (1,1,2) do (
     sol.exe
     fc %name%.out %name%_%%i.ans || break
 )
+type %name%.ans

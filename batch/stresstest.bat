@@ -7,4 +7,3 @@ for /l %%i in (1, 1, 111111) do (
     fc %name%.ans %name%.out ||break
 )
 type %name%.ans
-pause
