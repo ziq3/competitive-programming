@@ -1,2 +1,2 @@
-g++ -std=c++11 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fno-sanitize-recover -Wconversion -Wunused-variable -Wshadow -Wall -Wextra -pedantic sol.cpp -o sol.exe
+-std=c++11 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fno-sanitize-recover -Wconversion -Wunused-variable -Wshadow -Wall -Wextra -pedantic
 
