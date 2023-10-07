@@ -10,7 +10,7 @@ using namespace std;
 #define rep(i, a, b) for (ll i = a; i <= (b); ++i)
 using ll = long long;
 using pi = pair<ll, ll>;
-const ll N = 21;
+const ll N = 1e5+1;
 ll n, k, ans = 0;
 vector<ll> a;
 map<ll, ll> g[N];
