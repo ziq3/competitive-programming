@@ -10,6 +10,7 @@ struct FT
     {
         ll res=0;
         for(; pos>0; pos-=pos&-pos)res+=s[pos];
+        return res;
     }
     ll query(ll l,ll r)
     {
