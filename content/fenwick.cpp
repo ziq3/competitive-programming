@@ -1,15 +1,18 @@
 struct FT
 {
-    vector<ll>e;
-    FT(ll _n)e(_n);
+    vector<ll>s;
+    FT(ll _n):s(_n) {};
     void update(ll pos,ll val)
     {
-        for(;pos<sz(e);pos+=pos&-pos)s[pos]+=val;
+        for(; pos<sz(s); pos+=pos&-pos)s[pos]+=val;
     }
     ll query(ll pos)
     {
         ll res=0;
-        for(;pos>0;pos-=pos&-pos)res+=s[pos];
+        for(; pos>0; pos-=pos&-pos)res+=s[pos];
     }
-    ll query(ll l,ll r)return query(r)-query(l-1);
+    ll query(ll l,ll r)
+    {
+        return query(r)-query(l-1);
+    }
 };
