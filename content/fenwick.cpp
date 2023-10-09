@@ -1,13 +1,19 @@
-struct FT {
-  vector<ll> s;
-  FT(int n) : s(n) {}
-  void update(int pos, ll dif) {  // a[pos] += dif
-    for (; pos < sz(s); pos |= pos + 1) s[pos] += dif;
-  }
-  ll query(int pos) {  // sum of values in [0, pos]
-    pos += 1;
-    ll res = 0;
-    for (; pos > 0; pos &= pos - 1) res += s[pos - 1];
-    return res;
-  }
+struct FT
+{
+    vector<ll>s;
+    FT(ll _n):s(_n) {};
+    void update(ll pos,ll val)
+    {
+        for(; pos<sz(s); pos+=pos&-pos)s[pos]+=val;
+    }
+    ll query(ll pos)
+    {
+        ll res=0;
+        for(; pos>0; pos-=pos&-pos)res+=s[pos];
+        return res;
+    }
+    ll query(ll l,ll r)
+    {
+        return query(r)-query(l-1);
+    }
 };
