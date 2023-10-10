@@ -10,7 +10,7 @@
 
 ### 2. Algorithm Design:
 
-- Develop the algorithm on paper or in pseudocode.
+- Develop the algorithm on paper.
 - Verify correctness and time complexity before coding.
 - Identify potential edge cases and tricky scenarios.
 
