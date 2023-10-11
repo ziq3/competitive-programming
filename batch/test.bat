@@ -2,7 +2,7 @@
 set name=bai1
 for /l %%i in (1,1,2) do (
     copy %name%_%%i.inp %name%.inp
-    sol.exe
+    sol
     fc %name%.out %name%_%%i.ans || break
 )
 type %name%.ans
