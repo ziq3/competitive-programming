@@ -1,6 +1,4 @@
 ### 1. Setup:
-
-- Uncheck "hide extensions for known file types"
 - Set compiler flag:
   - *All:*
     - `-std=c++11, -D_GLIBCXX_DEBUG, -D_GLIBCXX_DEBUG_PEDANTIC -fno-sanitize-recover, -O2`
