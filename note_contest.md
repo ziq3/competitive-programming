@@ -7,7 +7,7 @@
 - Write template files: `main.cpp`, `com.bat`, `st.bat`
 
 ### 2. Thinking:
-- Check understanding problem at least by check solution correct on samples
+- Check understanding problem by samples
 
 ### 2. Algorithm Design:
 - Develop the algorithm on paper.
