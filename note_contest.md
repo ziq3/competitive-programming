@@ -6,8 +6,10 @@
     - `-Wconversion, -Wshadow, -pedantic, -Wunused-variable, -Wall, -Wextra`
 - Write template files: `main.cpp`, `com.bat`, `st.bat`
 
-### 2. Algorithm Design:
+### 2. Thinking:
 - Check understanding problem at least by check solution correct on samples
+
+### 2. Algorithm Design:
 - Develop the algorithm on paper.
 - Verify correctness and time complexity before coding.
 - Identify potential edge cases and tricky scenarios.
