@@ -7,7 +7,7 @@
 - Write template files: `main.cpp`, `com.bat`, `st.bat`
 
 ### 2. Algorithm Design:
-
+- Check understanding problem at least by check solution correct on samples
 - Develop the algorithm on paper.
 - Verify correctness and time complexity before coding.
 - Identify potential edge cases and tricky scenarios.
