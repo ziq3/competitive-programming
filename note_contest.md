@@ -18,4 +18,4 @@
 
 - Stress test with small and large input values.
 - Create manual test cases covering different scenarios.
-- Don't use `if (fopen)` with brute.cpp, gen.cpp
+- Don't use `if (fopen)` in brute.cpp, gen.cpp
