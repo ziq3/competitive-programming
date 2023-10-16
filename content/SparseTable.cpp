@@ -2,7 +2,7 @@ template<class B>
 struct Sparse : public B
 {
     array<array<ll,N>,17>node;
-    void init()
+    void Init()
     {
         rep(i,1,16)
         {
@@ -12,7 +12,7 @@ struct Sparse : public B
             }
         }
     }
-    ll query(ll l,ll r)
+    ll Get(ll l,ll r)
     {
         ll lg=log2(r-l+1);
         return B::OP(node[lg][l],node[lg][r-(1<<lg)+1]);
