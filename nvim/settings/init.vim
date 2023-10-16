@@ -13,9 +13,11 @@ let g:clipboard = {
 
 nnoremap <silent> <Esc> :noh<CR>
 set termguicolors
-set guifont=Mono:h15
-
 syntax on
+
+set nobackup
+set nowb
+set noswapfile
 
 set autoread
 set clipboard=unnamed,unnamedplus
@@ -24,7 +26,6 @@ set mouse=a
 set ruler
 set showcmd
 set shellslash
-set cursorline
 
 set autoindent
 set smartindent
@@ -42,4 +43,4 @@ set incsearch
 set backspace=indent,eol,start
 set nofixendofline
 
-autocmd VimEnter * if argc() > 0 && argv()[0] == "c.cpp" | vsp | vertical resize +40 | wincmd l | sp | e .inp | wincmd j | e .out | wincmd h | endif
+autocmd VimEnter * if argc() > 0 && argv()[0] == "main.cpp" | vsp | vertical resize +50 | wincmd l | sp | e .inp | wincmd j | e .out | wincmd h | endif
