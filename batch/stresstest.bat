@@ -9,4 +9,3 @@ for /l %%i in (1, 1, 111111) do (
     brute>%name%.ans<%name%.inp
     fc %name%.ans %name%.out ||exit /b
 )
-type %name%.ans
