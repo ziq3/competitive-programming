@@ -4,7 +4,7 @@
     - `-std=c++11, -D_GLIBCXX_DEBUG, -D_GLIBCXX_DEBUG_PEDANTIC -fno-sanitize-recover, -O2`
   - *Specific for Codeblock:*
     - `-Wconversion, -Wshadow, -pedantic, -Wunused-variable, -Wall, -Wextra`
-- Write template files: `main.cpp`, `com.bat`, `st.bat`
+- Write template files: `main.cpp`, `st.bat`
 
 ### 2. Thinking:
 - Check understanding problem by samples
