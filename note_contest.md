@@ -3,7 +3,7 @@
   - *All:*
     - `-std=c++11, -D_GLIBCXX_DEBUG, -D_GLIBCXX_DEBUG_PEDANTIC -fno-sanitize-recover, -O2`
   - *Specific for Codeblock:*
-    - `-Wconversion, -Wshadow, -pedantic, -Wunused-variable, -Wall, -Wextra`
+    - `-Wconversion, -Wshadow, -pedantic, -Wunused-variable, -Wall, -Wextra,-Wfatal-errors`
   - *Pragma:*
     - `#pragma GCC optimize(3)`
     - `#pragma GCC target("avx2")`
