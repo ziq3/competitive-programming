@@ -1,5 +1,6 @@
 syntax on
 set termguicolors
+colorscheme gruvbox
 
 set nobackup
 set nowb
