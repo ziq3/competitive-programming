@@ -5,7 +5,7 @@ for %%f in (*.cpp) do (
 )
 for /l %%i in (1, 1, 111111) do (
     gen>%name%.inp
-    sol
+    sol>%name%.out<%name%.inp
     brute>%name%.ans<%name%.inp
     fc %name%.ans %name%.out ||exit /b
 )
