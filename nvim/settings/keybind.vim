@@ -1,4 +1,4 @@
-nnoremap <F9> :wa<CR>:!g++ -D_GLIBCXX_DEBUG -Wall % -o %:r && %:r<CR>
+nnoremap <F9> :wa<CR>:!g++ -D_GLIBCXX_DEBUG -Wall -DLOCAL % -o %:r && %:r<CR>
 nnoremap <F1> :%d<CR>:-1read template.cpp<CR>
 
 map <C-j> <C-W>j
