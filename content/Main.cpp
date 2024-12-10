@@ -1,6 +1,3 @@
-#define TASK ""
-#pragma GCC optimize("O2,unroll-loops")
-#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
 using namespace std;
 #define el cout << "\n"
@@ -14,9 +11,10 @@ ll n;
 int main() {
     cin.tie(nullptr)->sync_with_stdio(false);
 #ifdef LOCAL
-    freopen(TASK ".inp", "r", stdin);
-    freopen(TASK ".out", "w", stdout);
+    freopen(".inp", "r", stdin);
+    freopen(".out", "w", stdout);
 #endif
     cin >> n;
     return 0;
 }
+
