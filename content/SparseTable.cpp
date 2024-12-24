@@ -4,7 +4,7 @@ struct SparseTable {
 
     ll F(ll x,ll y){return min(x,y);}
 
-    void Init()
+    void Build()
     {
         rep(i,1,MAXLOG)
         {
@@ -14,7 +14,7 @@ struct SparseTable {
             }
         }
     }
-    ll Get(ll l,ll r)
+    ll Query(ll l,ll r)
     {
         ll lg=__lg(r-l+1);
         return F(a[lg][l],a[lg][r-(1<<lg)+1]);
