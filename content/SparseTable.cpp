@@ -1,20 +1,22 @@
-template<class B>
-struct Sparse : public B
-{
-    array<array<ll,N>,17>node;
+struct SparseTable {
+    static constexpr ll MAXSIZE=1e5,MAXLOG=16;
+    array<array<ll,MAXSIZE>,MAXLOG> a;
+
+    ll F(ll x,ll y){return min(x,y);}
+
     void Init()
     {
-        rep(i,1,16)
+        rep(i,1,MAXLOG)
         {
-            for(ll j=1;j+(1<<i)-1<=n;++j)
+            for(ll j=1;j+(1<<i)-1<=MAXSIZE;++j)
             {
-                node[i][j]=B::OP(node[i-1][j],node[i-1][j+(1<<(i-1))]);
+                a[i][j]=F(a[i-1][j],a[i-1][j+(1<<(i-1))]);
             }
         }
     }
     ll Get(ll l,ll r)
     {
-        ll lg=log2(r-l+1);
-        return B::OP(node[lg][l],node[lg][r-(1<<lg)+1]);
+        ll lg=__lg(r-l+1);
+        return F(a[lg][l],a[lg][r-(1<<lg)+1]);
     }
 };
