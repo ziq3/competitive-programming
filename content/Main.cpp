@@ -3,15 +3,15 @@ using namespace std;
 #define print_op(...) ostream& operator<<(ostream& out, const __VA_ARGS__& u)
 #define db(val) "["#val" = "<<(val)<<"] "
 template<class U, class V> print_op(pair<U, V>) {
-    return out << "(" << u.first << ", " << u.second << ")";
+	return out << "(" << u.first << ", " << u.second << ")";
 }
 template<class Con, class = decltype(begin(declval<Con>()))>
 typename enable_if<!is_same<Con, string>::value, ostream&>::type
 operator<<(ostream& out, const Con& con) { 
-    out << "{";
-    for (auto beg = con.begin(), it = beg; it != con.end(); ++it)
-        out << (it == beg ? "" : ", ") << *it;
-    return out << "}";
+	out << "{";
+	for (auto beg = con.begin(), it = beg; it != con.end(); ++it)
+		out << (it == beg ? "" : ", ") << *it;
+	return out << "}";
 }
 #define el cout << "\n"
 #define sz(x) (ll)(x).size()
@@ -22,23 +22,21 @@ const int N=1e5+1;
 using pi = pair<int, int>;
 void solve()
 {
-    int n;
-    cin>>n;
+	int n;
+	cin>>n;
 }
 int main() {
-    cin.tie(nullptr)->sync_with_stdio(false);
+	cin.tie(nullptr)->sync_with_stdio(false);
 #ifdef LOCAL
-    freopen(".inp", "r", stdin);
-    freopen(".out", "w", stdout);
+	freopen(".inp", "r", stdin);
+	freopen(".out", "w", stdout);
 #endif
 	int tc;
-    cin >> tc;
+	cin >> tc;
 	rep(i,1,tc)
 	{
-		cout<<"# Test case : "<<i;el;
+		//cout<<"# Test case : "<<i;el;
 		solve();
 	}
-    return 0;
+	return 0;
 }
-
-
