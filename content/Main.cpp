@@ -16,14 +16,13 @@ operator<<(ostream& out, const Con& con) {
 #define el cout << "\n"
 #define sz(x) (ll)(x).size()
 #define all(x) x.begin(), x.end()
-#define rep(i, a, b) for (ll i = a; i <= (b); ++i)
+#define rep(i, a, b) for (int i = a; i <= (b); ++i)
 using ll = long long;
-using pi = pair<ll, ll>;
-const ll N=1e5+1;
-ll tc;
+const int N=1e5+1;
+using pi = pair<int, int>;
 void solve()
 {
-    ll n;
+    int n;
     cin>>n;
 }
 int main() {
@@ -32,8 +31,14 @@ int main() {
     freopen(".inp", "r", stdin);
     freopen(".out", "w", stdout);
 #endif
+	int tc;
     cin >> tc;
-    while(tc--)solve(),el;
+	rep(i,1,tc)
+	{
+		cout<<"# Test case : "<<i;el;
+		solve();
+	}
     return 0;
 }
+
 
