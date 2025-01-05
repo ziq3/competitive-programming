@@ -1,20 +1,65 @@
+struct Info
+{
+	ll maxSub,minSub,maxAdd,minAdd,maxSum;
+	Info(){};
+	Info (int x,int p)
+	{
+		maxSub=x-p;
+		minSub=x-p;
+		maxAdd=x+p;
+		minAdd=x+p;
+		maxSum=0;
+	}
+	Info operator +(const Info &other)
+	{
+		Info res(0,0);
+		res.maxSub=max(maxSub,other.maxSub);
+		res.minSub=min(minSub,other.minSub);
+		res.maxAdd=max(maxAdd,other.maxAdd);
+		res.minAdd=min(minAdd,other.minAdd);
+		res.maxSum=max({maxSum,other.maxSum,maxAdd-other.minAdd,other.maxSub-minSub});
+		return res;
+	}
+};
 struct Tree {
-	typedef int T;
-	static constexpr T unit = INT_MIN;
-	T f(T a, T b) { return max(a, b); } // (any associative fn)
-	vector<T> s; int n;
-	Tree(int n = 0, T def = unit) : s(2*n, def), n(n) {}
-	void update(int pos, T val) {
-		for (s[pos += n] = val; pos /= 2;)
-			s[pos] = f(s[pos * 2], s[pos * 2 + 1]);
-	}
-	T query(int b, int e) { // query [b, e]
-	        e+=1;
-		T ra = unit, rb = unit;
-		for (b += n, e += n; b < e; b /= 2, e /= 2) {
-			if (b % 2) ra = f(ra, s[b++]);
-			if (e % 2) rb = f(s[--e], rb);
+	Tree(int n):a(n*4){};
+	vector<Info>a;
+	void build(int id,int l,int r,vector<Info>&b){
+		if(l==r){
+			a[id]=b[l];
+			return;
 		}
-		return f(ra, rb);
+		int mid = (l+r)/2;
+		build(id*2,l,mid,b);
+		build(id*2+1,mid+1,r,b);
+		a[id] = a[id*2]+a[id*2+1];
 	}
+	void update(int id,int l,int r,int p,Info v)
+	{
+		if(l==r)
+		{
+			a[id]=v;
+			return;
+		}
+		int mid=(l+r)/2;
+		if(p<=mid)
+		{
+			update(id*2,l,mid,p,v);
+		}
+		else
+		{
+			update(id*2+1,mid+1,r,p,v);
+		}
+		a[id]=a[id*2]+a[id*2+1];
+	}
+	Info query(int id,int l,int r,int u,int v)
+	{
+		if(l>=u&&r<=v)
+		{
+			return a[id];
+		}
+		int mid=(l+r)/2;
+		return query(id*2,l,mid,u,v)+query(id*2+1,mid+1,r,u,v);
+	}
+
 };
