@@ -14,7 +14,7 @@ operator<<(ostream& out, const Con& con) {
 	return out << "}";
 }
 #define el cout << "\n"
-#define sz(x) (ll)(x).size()
+#define sz(x) (int)(x).size()
 #define all(x) x.begin(), x.end()
 #define rep(i, a, b) for (int i = a; i <= (b); ++i)
 using ll = long long;
