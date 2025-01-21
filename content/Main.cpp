@@ -14,9 +14,9 @@ operator<<(ostream& out, const Con& con) {
 	return out << "}";
 }
 #define el cout << "\n"
-#define sz(x) (int)(x).size()
+#define sz(x) (long long)(x).size()
 #define all(x) x.begin(), x.end()
-#define rep(i, a, b) for (int i = a; i <= (b); ++i)
+#define rep(i, a, b) for (long long i = a; i <= (b); ++i)
 #define int long long
 const int N=1e5+1;
 using pi = pair<int, int>;
