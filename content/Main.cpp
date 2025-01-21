@@ -17,7 +17,7 @@ operator<<(ostream& out, const Con& con) {
 #define sz(x) (int)(x).size()
 #define all(x) x.begin(), x.end()
 #define rep(i, a, b) for (int i = a; i <= (b); ++i)
-using ll = long long;
+#define int long long
 const int N=1e5+1;
 using pi = pair<int, int>;
 void solve()
@@ -25,7 +25,7 @@ void solve()
 	int n;
 	cin>>n;
 }
-int main() {
+signed main() {
 	cin.tie(nullptr)->sync_with_stdio(false);
 #ifdef LOCAL
 	freopen(".inp", "r", stdin);
