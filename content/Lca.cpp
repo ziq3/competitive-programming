@@ -2,7 +2,7 @@ const int LG = 17;
 int up[LG + 1][N], h[N];
 int Lca(int u, int v) {
   if (h[u] < h[v]) swap(u, v);
-  ll need = h[u] - h[v];
+  int need = h[u] - h[v];
   for (int j = LG; j >= 0; --j) {
     if ((1 << j) & need) {
       u = up[j][u];
