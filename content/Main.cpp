@@ -36,7 +36,7 @@ signed main() {
 	rep(i,1,tc)
 	{
 		//cout<<"# Test case : "<<i;el;
-		solve();
+		solve();el;
 	}
 	return 0;
 }
