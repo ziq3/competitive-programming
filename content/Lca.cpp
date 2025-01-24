@@ -1,14 +1,16 @@
 const int LG = 17;
 int up[LG + 1][N], h[N];
 int Lca(int u, int v) {
-  if (h[u] < h[v]) swap(u, v);
+  if (h[u] < h[v])
+    swap(u, v);
   int need = h[u] - h[v];
   for (int j = LG; j >= 0; --j) {
     if ((1 << j) & need) {
       u = up[j][u];
     }
   }
-  if (u == v) return u;
+  if (u == v)
+    return u;
   for (int i = LG; i >= 0; --i) {
     if (up[i][u] != up[i][v]) {
       u = up[i][u];
@@ -20,7 +22,8 @@ int Lca(int u, int v) {
 void Dfs(int u, int pre) {
   up[0][u] = pre;
   for (int v : g[u]) {
-    if (v == pre) continue;
+    if (v == pre)
+      continue;
     h[v] = h[u] + 1;
     dfs(v, u);
   }
