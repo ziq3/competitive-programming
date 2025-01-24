@@ -1,7 +1,8 @@
-ll Pow(ll x, ll e, ll mod) {
-  ll res = 1;
+int Pow(int x, int e, int mod) {
+  int res = 1;
   for (; e; e /= 2) {
-    if (e & 1) (res *= x) %= mod;
+    if (e & 1)
+      (res *= x) %= mod;
     (x *= x) %= mod;
   }
   return res;
