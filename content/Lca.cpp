@@ -1,5 +1,6 @@
 const int LG = 17;
-int up[LG + 1][N], h[N];
+array<array<int, N>, LG + 1> up;
+array<int, N> h;
 int Lca(int u, int v) {
   if (h[u] < h[v])
     swap(u, v);
