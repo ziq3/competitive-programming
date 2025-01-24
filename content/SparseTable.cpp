@@ -1,22 +1,16 @@
-struct SparseTable {
-    static constexpr ll MAXSIZE=1e5,MAXLOG=16;
-    array<array<ll,MAXSIZE>,MAXLOG> a;
-
-    ll F(ll x,ll y){return min(x,y);}
-
-    void Build()
-    {
-        rep(i,1,MAXLOG)
-        {
-            for(ll j=1;j+(1<<i)-1<=MAXSIZE;++j)
-            {
-                a[i][j]=F(a[i-1][j],a[i-1][j+(1<<(i-1))]);
-            }
-        }
-    }
-    ll Query(ll l,ll r)
-    {
-        ll lg=__lg(r-l+1);
-        return F(a[lg][l],a[lg][r-(1<<lg)+1]);
-    }
+template<class T>
+struct RMQ {
+	vector<vector<T>> jmp;
+	RMQ(const vector<T>& V) : jmp(1, V) {
+		for (int pw = 1, k = 1; pw * 2 <= sz(V); pw *= 2, ++k) {
+			jmp.emplace_back(sz(V) - pw * 2 + 1);
+			rep(j,0,sz(jmp[k])-1)
+				jmp[k][j] = min(jmp[k - 1][j], jmp[k - 1][j + pw]);
+		}
+	}
+	T query(int a, int b) {
+		b+=1;
+		int dep = 63 - __builtin_clzll(b - a);
+		return min(jmp[dep][a], jmp[dep][b - (1 << dep)]);
+	}
 };
