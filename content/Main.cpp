@@ -30,7 +30,7 @@ signed main() {
   freopen(".inp", "r", stdin);
   freopen(".out", "w", stdout);
 #endif
-  int tc;
+  int tc=1;
   cin >> tc;
   rep(i, 1, tc) {
     // cout<<"# Test case : "<<i;el;
