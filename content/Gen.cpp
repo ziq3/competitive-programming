@@ -1,20 +1,34 @@
-#define TASK ""
 #include <bits/stdc++.h>
 using namespace std;
-#define el cout << "\n"
-#define sz(x) (ll)(x).size()
-#define all(x) x.begin(), x.end()
-#define rep(i, a, b) for (ll i = a; i <= (b); ++i)
-using ll = long long;
-using pi = pair<ll, ll>;
-const ll N=1e5+1;
-ll n;
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-ll rand(ll l,ll r)
+#define print_op(...) ostream &operator<<(ostream &out, const __VA_ARGS__ &u)
+#define db(val) "[" #val " = " << (val) << "] "
+template <class U, class V> print_op(pair<U, V>)
 {
-    return uniform_int_distribution<int>(l,r)(rng);
+        return out << "(" << u.first << ", " << u.second << ")";
 }
-int main() {
-  cin.tie(nullptr)->sync_with_stdio(false);
-  return 0;
+template <class Con, class = decltype(begin(declval<Con>()))>
+typename enable_if<!is_same<Con, string>::value, ostream &>::type
+operator<<(ostream &out, const Con &con)
+{
+        out << "{";
+        for (auto beg = con.begin(), it = beg; it != con.end(); ++it)
+                out << (it == beg ? "" : ", ") << *it;
+        return out << "}";
+}
+#define el cout << "\n"
+#define sz(x) (long long)(x).size()
+#define all(x) x.begin(), x.end()
+#define rep(i, a, b) for (long long i = a; i <= (b); ++i)
+#define int long long
+const int N = 1e5 + 1;
+using pi = pair<int, int>;
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rand(int l, int r)
+{
+        return uniform_int_distribution<int>(l, r)(rng);
+}
+signed main()
+{
+        cin.tie(nullptr)->sync_with_stdio(false);
+        return 0;
 }
