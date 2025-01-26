@@ -15,6 +15,7 @@ set noswapfile
 set nobackup
 set cin ar aw ai is ts=4 sw=4 nu ru clipboard=unnamed,unnamedplus ignorecase backspace=eol,start,indent
 autocmd VimEnter * if argc() > 0 && argv()[0] =~ '\.cpp$' | vsp | vertical resize +50 | wincmd l | sp | e .inp | wincmd j | e .out | wincmd h | endif
+autocmd VimEnter * if argc() > 0 && argv()[0] =~ '\.c$' | vsp | vertical resize +50 | wincmd l | sp | e .inp | wincmd j | e .out | wincmd h | endif
 colorscheme gruvbox
 
 
