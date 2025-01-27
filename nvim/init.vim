@@ -64,7 +64,7 @@ autocmd FileType c   nnoremap <buffer> <F9> :wa<CR>:!gcc -DLOCAL -Wall -Wextra %
 " --- LSP & Formatting ---
 let g:ale_linters = {
     \ 'c': ['clang'],
-    \ 'cpp': ['clang', 'cppcheck']
+    \ 'cpp': ['clang']
     \ }
 
 let g:ale_fixers = {
