@@ -10,7 +10,7 @@ struct LCA {
                 , up(LG + 1, vi(sz(C)))
         {
                 dfs(1, 1, C);
-                Build();
+                build();
         }
         void dfs(int u, int pre, vector<vi> &g)
         {
