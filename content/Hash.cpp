@@ -1,3 +1,8 @@
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+int rand(int l, int r)
+{
+        return uniform_int_distribution<int>(l, r)(rng);
+}
 typedef uint64_t ull;
 struct H {
         ull x;
@@ -27,7 +32,7 @@ struct H {
                 return get() == o.get();
         }
 };
-static const H C = (ll)1e11 + 3; // (order ~ 3e9; random also ok)
+H C = rand(1e9,2e9); // (order ~ 3e9; random also ok)
 struct HashInterval {
         vector<H> ha, pw;
         HashInterval(string &str)
