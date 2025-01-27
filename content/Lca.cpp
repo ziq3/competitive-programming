@@ -9,20 +9,20 @@ struct LCA {
                 , h(sz(C))
                 , up(LG + 1, vi(sz(C)))
         {
-                Dfs(1, 1, C);
+                dfs(1, 1, C);
                 Build();
         }
-        void Dfs(int u, int pre, vector<vi> &g)
+        void dfs(int u, int pre, vector<vi> &g)
         {
                 up[0][u] = pre;
                 for (int v : g[u]) {
                         if (v == pre)
                                 continue;
                         h[v] = h[u] + 1;
-                        Dfs(v, u, g);
+                        dfs(v, u, g);
                 }
         }
-        void Build()
+        void build()
         {
                 for (int i = 1; i <= LG; ++i) {
                         for (int j = 1; j <= n; ++j) {
@@ -30,7 +30,7 @@ struct LCA {
                         }
                 }
         }
-        int Lca(int u, int v)
+        int lca(int u, int v)
         {
                 if (h[u] < h[v])
                         swap(u, v);
