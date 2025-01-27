@@ -1,23 +1,14 @@
 struct Info {
-        ll maxSub, minSub, maxAdd, minAdd, maxSum;
+        int val = 0;
         Info() {};
-        Info(int x, int p)
+        Info(int x)
         {
-                maxSub = x - p;
-                minSub = x - p;
-                maxAdd = x + p;
-                minAdd = x + p;
-                maxSum = 0;
+                val = x;
         }
         Info operator+(const Info &other)
         {
-                Info res(0, 0);
-                res.maxSub = max(maxSub, other.maxSub);
-                res.minSub = min(minSub, other.minSub);
-                res.maxAdd = max(maxAdd, other.maxAdd);
-                res.minAdd = min(minAdd, other.minAdd);
-                res.maxSum = max({ maxSum, other.maxSum, maxAdd - other.minAdd,
-                                   other.maxSub - minSub });
+                Info res = *this;
+                res.val += other.val;
                 return res;
         }
 };
@@ -55,7 +46,11 @@ struct Tree {
                 if (l >= u && r <= v) {
                         return a[id];
                 }
+                if (l > v || r < u) {
+                        return Info();
+                }
                 int mid = (l + r) / 2;
+                query(id * 2, l, mid, u, v);
                 return query(id * 2, l, mid, u, v) +
                        query(id * 2 + 1, mid + 1, r, u, v);
         }
