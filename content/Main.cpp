@@ -15,6 +15,20 @@ operator<<(ostream &out, const Con &con)
                 out << (it == beg ? "" : ", ") << *it;
         return out << "}";
 }
+void dbg_out()
+{
+        cerr << endl;
+}
+template <typename Head, typename... Tail> void dbg_out(Head H, Tail... T)
+{
+        cerr << ' ' << H;
+        dbg_out(T...);
+}
+#ifdef LOCAL
+#define dbg(...) cout << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
 #define el cout << "\n"
 #define sz(x) (long long)(x).size()
 #define all(x) x.begin(), x.end()
