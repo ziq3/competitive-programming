@@ -1,27 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define print_op(...) ostream &operator<<(ostream &out, const __VA_ARGS__ &u)
-#define db(val) "[" #val " = " << (val) << "] "
-template <class U, class V> print_op(pair<U, V>)
+template <typename A, typename B>
+ostream &operator<<(ostream &os, const pair<A, B> &p)
 {
-        return out << "(" << u.first << ", " << u.second << ")";
+        return os << '(' << p.first << ", " << p.second << ')';
 }
-template <class Con, class = decltype(begin(declval<Con>()))>
-typename enable_if<!is_same<Con, string>::value, ostream &>::type
-operator<<(ostream &out, const Con &con)
+template <typename T_container,
+          typename T = typename enable_if<!is_same<T_container, string>::value,
+                                          typename T_container::value_type>::type>
+ostream &operator<<(ostream &os, const T_container &v)
 {
-        out << "{";
-        for (auto beg = con.begin(), it = beg; it != con.end(); ++it)
-                out << (it == beg ? "" : ", ") << *it;
-        return out << "}";
+        os << '{';
+        string sep;
+        for (const T &x : v)
+                os << sep << x, sep = ", ";
+        return os << '}';
 }
+
 void dbg_out()
 {
         cout << endl;
 }
 template <typename Head, typename... Tail> void dbg_out(Head H, Tail... T)
 {
-        cout << ' ' << H;
+        cout << ", " << H;
         dbg_out(T...);
 }
 #ifdef LOCAL
