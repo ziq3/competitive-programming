@@ -1,50 +1,19 @@
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-int rand(int l, int r)
-{
-        return uniform_int_distribution<int>(l, r)(rng);
-}
-typedef uint64_t ull;
-struct H {
-        ull x;
-        H(ull x = 0)
-                : x(x)
-        {
-        }
-        H operator+(H o)
-        {
-                return x + o.x + (x + o.x < x);
-        }
-        H operator-(H o)
-        {
-                return *this + ~o.x;
-        }
-        H operator*(H o)
-        {
-                auto m = (__uint128_t)x * o.x;
-                return H((ull)m) + (ull)(m >> 64);
-        }
-        ull get() const
-        {
-                return x + !~x;
-        }
-        bool operator==(H o) const
-        {
-                return get() == o.get();
-        }
-};
-H C = rand(1e9,2e9); // (order ~ 3e9; random also ok)
-struct HashInterval {
-        vector<H> ha, pw;
-        HashInterval(string &str)
+const int BASE = uniform_int_distribution<int32_t>(331, 999)(rng);
+struct Hash {
+        vector<Mint> ha, pw;
+        Hash(string &str)
                 : ha(sz(str) + 1)
                 , pw(ha)
         {
                 pw[0] = 1;
-                rep(i, 0, sz(str) - 1)
-                        ha[i + 1] = ha[i] * C + str[i], pw[i + 1] = pw[i] * C;
+                rep(i, 0, sz(str) - 1) {
+                        ha[i + 1] = ha[i] * BASE + str[i];
+                        pw[i + 1] = pw[i] * BASE;
+                }
         }
-        H hashInterval(int a, int b)
+        int query(int a, int b)
         { // hash [a, b]
-                return ha[b + 1] - ha[a] * pw[b - a + 1];
+                return (int)(ha[b + 1] - ha[a] * pw[b - a + 1]);
         }
 };
