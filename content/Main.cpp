@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define print_op(...) ostream &operator<<(ostream &out, const __VA_ARGS__ &u)
 template <typename A, typename B>
 ostream &operator<<(ostream &os, const pair<A, B> &p)
 {
@@ -17,7 +16,6 @@ ostream &operator<<(ostream &os, const T_container &v)
                 os << sep << x, sep = ", ";
         return os << '}';
 }
-
 void dbg_out()
 {
         cout << endl;
