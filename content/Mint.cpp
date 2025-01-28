@@ -16,7 +16,7 @@ struct Mint {
         return *this;
     }
     Mint& operator*=(const Mint& oth) {
-        v = (1LL * v * oth.v) % MOD;
+        v = (v * oth.v) % MOD;
         return *this;
     }
     Mint operator+(const Mint& oth) const { Mint res = *this; res += oth; return res; }
