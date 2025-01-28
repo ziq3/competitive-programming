@@ -17,11 +17,11 @@ operator<<(ostream &out, const Con &con)
 }
 void dbg_out()
 {
-        cerr << endl;
+        cout << endl;
 }
 template <typename Head, typename... Tail> void dbg_out(Head H, Tail... T)
 {
-        cerr << ' ' << H;
+        cout << ' ' << H;
         dbg_out(T...);
 }
 #ifdef LOCAL
