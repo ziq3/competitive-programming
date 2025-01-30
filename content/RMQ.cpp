@@ -10,10 +10,10 @@ template <class T> struct RMQ {
                                         min(jmp[k - 1][j], jmp[k - 1][j + pw]);
                 }
         }
-        T query(int a, int b)
+        T query(int l, int r) // [l,r] inclusive
         {
-                b += 1;
-                int dep = 63 - __builtin_clzll(b - a);
-                return min(jmp[dep][a], jmp[dep][b - (1 << dep)]);
+                r += 1;
+                int dep = 63 - __builtin_clzll(r - l);
+                return min(jmp[dep][l], jmp[dep][r - (1 << dep)]);
         }
 };
