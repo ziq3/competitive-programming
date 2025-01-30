@@ -12,27 +12,26 @@ struct Info {
                 return res;
         }
 };
-struct Tree {
+struct SegmentTree {
         int n;
-        Tree(int _n)
-                : a(_n * 2)
-                , n(_n) {};
         vector<Info> a;
+        SegmentTree(int _n)
+                : n(_n)
+                , a(_n * 2) {};
         void update(int pos, Info val)
         {
                 for (a[pos += n] = val; pos /= 2;)
                         a[pos] = a[pos * 2] + a[pos * 2 + 1];
         }
-        Info query(int b, int e)
+        Info qurry(int l, int r) // [l,r] inclusive
         {
-                e += 1;
-                Info ra = Info(), rb = Info();
-                for (b += n, e += n; b < e; b /= 2, e /= 2) {
-                        if (b % 2)
-                                ra = ra + a[b++];
-                        if (e % 2)
-                                rb = a[--e] + rb;
+                Info res = Info();
+                for (l += n, r += n + 1; l < r; l /= 2, r /= 2) {
+                        if (l % 2)
+                                res = res + a[l++];
+                        if (r % 2)
+                                res = a[--r] + res;
                 }
-                return ra + rb;
+                return res;
         }
 };
