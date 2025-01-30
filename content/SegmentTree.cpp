@@ -23,7 +23,7 @@ struct SegmentTree {
                 for (a[pos += n] = val; pos /= 2;)
                         a[pos] = a[pos * 2] + a[pos * 2 + 1];
         }
-        Info qurry(int l, int r) // [l,r] inclusive
+        Info query(int l, int r) // [l,r] inclusive
         {
                 Info res = Info();
                 for (l += n, r += n + 1; l < r; l /= 2, r /= 2) {
