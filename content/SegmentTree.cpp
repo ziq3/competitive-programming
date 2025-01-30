@@ -17,7 +17,7 @@ struct SegmentTree {
         vector<Info> a;
         SegmentTree(int _n)
                 : n(_n)
-                , a(_n * 2) {};
+                , a(n * 2) {};
         void update(int pos, Info val)
         {
                 for (a[pos += n] = val; pos /= 2;)
