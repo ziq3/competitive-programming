@@ -2,6 +2,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 const int BASE = uniform_int_distribution<int32_t>(331, 999)(rng);
 struct Hash {
         vector<Mint> ha, pw;
+
         Hash(string &str)
                 : ha(sz(str) + 1)
                 , pw(ha)
@@ -12,8 +13,9 @@ struct Hash {
                         pw[i + 1] = pw[i] * BASE;
                 }
         }
-        int query(int a, int b)
-        { // hash [a, b]
-                return (int)(ha[b + 1] - ha[a] * pw[b - a + 1]);
+
+        int query(int l, int r) // [l,r] inclusive
+        {
+                return (int)(ha[r + 1] - ha[l] * pw[r - l + 1]);
         }
 };
