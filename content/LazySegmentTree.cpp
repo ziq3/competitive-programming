@@ -1,3 +1,22 @@
+struct Info {
+        int val = 0;
+        int size = 1;
+        Info()
+        {
+        }
+        Info(int x)
+        {
+                val = x;
+        }
+        Info operator+(const Info &other)
+        {
+                Info res = *this;
+                res.val += other.val;
+                res.size += other.size;
+                return res;
+        }
+};
+
 struct LazySegmentTree {
         int n;
         vector<Info> a;
