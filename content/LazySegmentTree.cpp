@@ -16,7 +16,6 @@ struct Info {
                 return res;
         }
 };
-
 struct LazySegmentTree {
         int n;
         vector<Info> a;
