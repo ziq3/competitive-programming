@@ -26,9 +26,6 @@ struct LazySegmentTree {
                 , a(2 * n)
                 , lazy(n, 0)
         {
-                for (int i = n; i < 2 * n; ++i) {
-                        a[i].size = 1;
-                }
                 for (int i = n - 1; i > 0; --i) {
                         a[i] = a[i * 2] + a[i * 2 + 1];
                 }
