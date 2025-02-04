@@ -26,10 +26,6 @@ struct H {
 	{
 		return get() == o.get();
 	}
-	bool operator<(H o) const
-	{
-		return get() < o.get();
-	}
 };
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
