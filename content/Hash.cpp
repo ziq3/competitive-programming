@@ -33,7 +33,7 @@ struct H {
 };
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-const H BASE = uniform_int_distribution<int32_t>(666, 999)(rng);
+const H BASE = uniform_int_distribution<int32_t>(333, 999)(rng);
 struct Hash {
 	vector<H> ha, pw;
 	Hash(string &str)
