@@ -49,6 +49,6 @@ struct Hash {
 
 	H query(int l, int r) // [l,r] inclusive
 	{
-		return (ha[r] - ha[l - 1] * pw[r - l + 1]);
+		return (ha[r + 1] - ha[l] * pw[r - l + 1]);
 	}
 };
