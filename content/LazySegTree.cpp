@@ -74,10 +74,9 @@ class LazySeg {
 	{
 		return d[1];
 	}
-	void apply(int l, int r, F f)
+	void apply(int l, int r, F f) // [l,r] inclusive
 	{
-		if (l == r) return;
-		l += N, r += N;
+		l += N, r += N + 1;
 		for (int i = log; i >= 1; i--) {
 			if (((l >> i) << i) != l)
 				push(l >> i);
