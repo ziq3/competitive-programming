@@ -51,7 +51,7 @@ class LazySeg {
 		for (int i = 1; i <= log; i++)
 			pull(p >> i);
 	}
-	S prod(int l, int r)
+	S prod(int l, int r) // [l,r] inclusive
 	{
 		l += N, r += N + 1;
 		for (int i = log; i >= 1; i--) {
