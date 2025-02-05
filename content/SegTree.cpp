@@ -12,10 +12,10 @@ struct Info {
                 return res;
         }
 };
-struct SegmentTree {
+struct SegTree {
         int n;
         vector<Info> a;
-        SegmentTree(int _n)
+        SegTree(int _n)
                 : n(_n)
                 , a(n * 2) {};
         void set(int pos, Info val)
