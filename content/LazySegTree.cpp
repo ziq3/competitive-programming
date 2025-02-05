@@ -53,9 +53,7 @@ class LazySeg {
 	}
 	S prod(int l, int r)
 	{
-		if (l == r)
-			return e();
-		l += N, r += N;
+		l += N, r += N + 1;
 		for (int i = log; i >= 1; i--) {
 			if (((l >> i) << i) != l)
 				push(l >> i);
@@ -78,9 +76,7 @@ class LazySeg {
 	}
 	void apply(int l, int r, F f)
 	{
-		if (l == r)
-			return;
-		l += N, r += N;
+		l += N, r += N + 1;
 		for (int i = log; i >= 1; i--) {
 			if (((l >> i) << i) != l)
 				push(l >> i);
