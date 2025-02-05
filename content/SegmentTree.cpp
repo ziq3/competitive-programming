@@ -18,7 +18,7 @@ struct SegmentTree {
         SegmentTree(int _n)
                 : n(_n)
                 , a(n * 2) {};
-        void update(int pos, Info val)
+        void set(int pos, Info val)
         {
                 for (a[pos += n] = val; pos /= 2;)
                         a[pos] = a[pos * 2] + a[pos * 2 + 1];
