@@ -1,3 +1,4 @@
+//above #define int long long;
 template <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S),
 	  F (*composition)(F, F), F (*id)()>
 class LazySeg {
