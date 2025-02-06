@@ -35,7 +35,7 @@ class LazySeg {
 	explicit LazySeg(const vector<S> &v)
 	{
 		log = 31 - __builtin_clz(v.size() | 1);
-		N = 1 << log;
+		N = v.size();
 		d = vector<S>(2 * N, e());
 		lz = vector<F>(N, id());
 		for (int i = 0; i < (int)v.size(); i++)
