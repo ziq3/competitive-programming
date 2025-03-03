@@ -59,7 +59,7 @@ inoremap jk <esc>
 inoremap kj <esc>
 
 " --- Compilation ---
-autocmd FileType cpp nnoremap <buffer> <F9> :wa<CR>:!g++ -std=c++20 -D_GLIBCXX_DEBUG -DLOCAL -Wall -Wextra -Wunused-variable -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wconversion -D_GLIBCXX_DEBUG_PEDANTIC -D_GLIBCXX_ASSERTIONS -fno-sanitize-recover -Wl,--stack,268435456 % -o %:r && %:r<CR>
+autocmd FileType cpp nnoremap <buffer> <F9> :wa<CR>:!g++ -std=c++20 -D_GLIBCXX_DEBUG -ggdb3 -DLOCAL -Wall -Wextra -Wunused-variable -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wconversion -D_GLIBCXX_DEBUG_PEDANTIC -D_GLIBCXX_ASSERTIONS -fno-sanitize-recover -Wl,--stack,268435456 % -o %:r && %:r<CR>
 autocmd FileType c   nnoremap <buffer> <F9> :wa<CR>:!gcc -DLOCAL -Wall -Wextra % -o %:r && %:r<CR>
 
 " --- LSP & Formatting ---
