@@ -16,7 +16,6 @@ void solve()
 {
 	int n;
 	cin >> n;
-	dbg(n);
 }
 signed main()
 {
